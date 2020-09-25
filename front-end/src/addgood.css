@@ -1,0 +1,23 @@
+div.add-good-title {
+  font-size: 1.5em;
+  margin: 30px auto;
+}
+
+div.goods-form {
+  display: block;
+}
+
+label {
+  margin-right: 20px;
+}
+
+div.info-piece {
+  margin: 30px auto;
+}
+
+input#submit {
+  background-color: #61dafb;
+  width: 60px;
+  border: none;
+  color: white;
+}
