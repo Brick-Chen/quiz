@@ -6,6 +6,8 @@ import com.twuc.shopping.entity.ProductEntity;
 import com.twuc.shopping.repository.ProductRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -26,6 +28,19 @@ public class ProductController {
         List<Product> products =  allProducts.stream()
                 .map(ProductController::mapFromProductEntitiesToProduct).collect(Collectors.toList());
         return ResponseEntity.ok(products);
+    }
+
+    @PostMapping("/product")
+    public ResponseEntity addProduct(@RequestBody Product product) {
+        ProductEntity productEntity = ProductEntity.builder()
+                .name(product.getProductName())
+                .unit(product.getUnit())
+                .price(product.getPrice())
+                .url(product.getUrl())
+                .build();
+
+        productRepository.save(productEntity);
+        return ResponseEntity.created(null).build();
     }
 
     private static Product mapFromProductEntitiesToProduct(ProductEntity productEntity) {
