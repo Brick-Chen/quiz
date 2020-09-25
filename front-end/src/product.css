@@ -1,0 +1,20 @@
+div.product {
+  display: inline-block;
+  border: 10px;
+  border-color: gainsboro;
+  height: 280px;
+  width: 180px;
+  background-color: gold;
+  margin: 20px 40px;
+}
+
+img {
+  width: 180px;
+  height: 200px;
+}
+
+input#add {
+  border-radius: 50%;
+  display: inline-flex;
+  border: none;
+}
