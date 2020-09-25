@@ -22,9 +22,10 @@ function App() {
           添加商品
         </Link>
       </div>
-        <Route exact path='/' component={Shop}/>
-        <Route exact path='/shoplist' component={ShopList}/>
-        <Route exact path='/addgood' component={AddGood}/>
+
+      <Route exact path='/' component={Shop}/>
+      <Route exact path='/shoplist' component={ShopList}/>
+      <Route exact path='/addgood' component={AddGood}/>
       </BrowserRouter>
     </div>
   );
