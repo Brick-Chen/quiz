@@ -24,6 +24,4 @@ public class ProductEntity {
     private Double price;
     private String url;
 
-    @OneToMany(mappedBy = "product", orphanRemoval = true)
-    List<OrderEntity> orders;
 }
