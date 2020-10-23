@@ -6,24 +6,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "product")
+@Table(name = "order")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductEntity {
+public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    Integer id;
 
-    private String name;
-    private String unit;
-    private Double price;
-    private String url;
+    Double amount;
 
-    @OneToMany(mappedBy = "product", orphanRemoval = true)
-    List<OrderEntity> orders;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    ProductEntity product;
 }

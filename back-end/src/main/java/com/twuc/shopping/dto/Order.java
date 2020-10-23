@@ -6,13 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Product {
-    private Integer id;
-    private String name;
-    private String unit;
-    private Double price;
-    private String url;
+public class Order {
+    Integer id;
+    Double amount;
+    Product product;
 }
